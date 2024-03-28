@@ -1,4 +1,6 @@
 function verifyEmailTemplate(userData, link) {
+  if (!userData || !userData.first_name || !userData.email || !link)
+    throw new Error("Invalid user data or missing link");
   return {
     subject: "Verification Email",
     text: `
