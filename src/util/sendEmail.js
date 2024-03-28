@@ -14,7 +14,7 @@ async function sendEmail(data, email) {
     console.log("Email sent successfully:", msg);
     return msg;
   } catch (err) {
-    console.error("Error sending email:", err);
+    // console.error("Error sending email:", err);
     throw err;
   }
 }
