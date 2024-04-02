@@ -1,6 +1,7 @@
 function verifyEmailTemplate(userData, link) {
   if (!userData || !userData.first_name || !userData.email || !link)
     throw new Error("Invalid user data or missing link");
+  unsubscribeLink = `adelkar.me:8080/v1/auth/unsubscribe?email=${userData.email}`;
   return {
     subject: "Verification Email",
     text: `
@@ -14,7 +15,7 @@ Verify Email-${link}
 Best Regards,
 Adelkar Org
 
-To unsubscribe from these emails, please click here ${link}.
+To unsubscribe from these emails, please click here ${unsubscribeLink}.
 
 Adelkar Org
 Washington St, Boston, MA 02130
@@ -76,7 +77,7 @@ Washington St, Boston, MA 02130
         <p>
           To unsubscribe from these emails, please
           <a
-            href="unsubscribe-link"
+            href="${unsubscribeLink}"
             target="_blank"
             style="color: #0073e6; text-decoration: none"
             >click here</a
