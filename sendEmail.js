@@ -4,8 +4,7 @@ const mailgun = new Mailgun(formData);
 const mg = mailgun.client({
   username: "api",
   key:
-    process.env.MAILGUN_API_KEY ||
-    "44dc7593b5bb177d7bb7d4b34cfe232c-f68a26c9-f1ab8409",
+    process.env.MAILGUN_API_KEY,
   domain:
     process.env.MAILGUN_DOMAIN ||
     "sandbox81b17e880b684407831b06ebdf43d940.mailgun.org",
